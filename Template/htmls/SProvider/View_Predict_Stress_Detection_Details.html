@@ -1,0 +1,121 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style12 {color: #FFFF00; font-weight: bold; }
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p align="center" class="text-uppercase pull-center style1">View Stress Prediction Type Details  !!! </p>
+                            <hr>
+                            <div class="tweettext">
+								<table border="2" width="100%" style="color:red; font-size:18px; text-align:center;">
+									<tr style="background-color:#ff0000; color:white;">
+										<th>FID</th>
+										<th>MEAN_RR</th>
+										<th>MEDIAN_RR</th>
+										<th>SDRR</th>
+										<th>RMSSD</th>
+										<th>SDSD</th>
+										<th>SDRR_RMSSD</th>
+										<th>HR</th>
+										<th>VLF</th>
+										<th>VLF_PCT</th>
+										<th>LF</th>
+										<th>LF_PCT</th>
+										<th>LF_NU</th>
+										<th>HF</th>
+										<th>HF_PCT</th>
+										<th>HF_NU</th>
+										<th>TP</th>
+										<th>LF_HF</th>
+										<th>HF_LF</th>
+										<th>sampen</th>
+										<th>higuci</th>
+										<th>condition</th>
+									</tr>
+								
+									{% for row in data %}
+									<tr>
+										<td>{{ row.FID }}</td>
+										<td>{{ row.MEAN_RR }}</td>
+										<td>{{ row.MEDIAN_RR }}</td>
+										<td>{{ row.SDRR }}</td>
+										<td>{{ row.RMSSD }}</td>
+										<td>{{ row.SDSD }}</td>
+										<td>{{ row.SDRR_RMSSD }}</td>
+										<td>{{ row.HR }}</td>
+										<td>{{ row.VLF }}</td>
+										<td>{{ row.VLF_PCT }}</td>
+										<td>{{ row.LF }}</td>
+										<td>{{ row.LF_PCT }}</td>
+										<td>{{ row.LF_NU }}</td>
+										<td>{{ row.HF }}</td>
+										<td>{{ row.HF_PCT }}</td>
+										<td>{{ row.HF_NU }}</td>
+										<td>{{ row.TP }}</td>
+										<td>{{ row.LF_HF }}</td>
+										<td>{{ row.HF_LF }}</td>
+										<td>{{ row.sampen }}</td>
+										<td>{{ row.higuci }}</td>
+										<td>{{ row.condition }}</td>
+									</tr>
+									{% endfor %}
+								</table>
+								
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
